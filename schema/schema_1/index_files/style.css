@@ -1,0 +1,610 @@
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./assets/open-sans-v17-latin-ext_latin-regular.eot"); /* IE9 Compat Modes */
+  src: local("Open Sans Regular"), local("OpenSans-Regular"),
+    url("./assets/open-sans-v17-latin-ext_latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("./assets/open-sans-v17-latin-ext_latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("./assets/open-sans-v17-latin-ext_latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("./assets/open-sans-v17-latin-ext_latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("./assets/open-sans-v17-latin-ext_latin-regular.svg#OpenSans")
+      format("svg"); /* Legacy iOS */
+}
+
+/* open-sans-600 - latin-ext_latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("/assets/open-sans-v17-latin-ext_latin-600.eot"); /* IE9 Compat Modes */
+  src: local("Open Sans SemiBold"), local("OpenSans-SemiBold"),
+    url("/assets/open-sans-v17-latin-ext_latin-600.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/assets/open-sans-v17-latin-ext_latin-600.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/assets/open-sans-v17-latin-ext_latin-600.woff") format("woff"),
+    /* Modern Browsers */
+      url("/assets/open-sans-v17-latin-ext_latin-600.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/assets/open-sans-v17-latin-ext_latin-600.svg#OpenSans")
+      format("svg"); /* Legacy iOS */
+}
+
+/* open-sans-700 - latin-ext_latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/open-sans-v17-latin-ext_latin-700.eot"); /* IE9 Compat Modes */
+  src: local("Open Sans Bold"), local("OpenSans-Bold"),
+    url("/assets/open-sans-v17-latin-ext_latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/assets/open-sans-v17-latin-ext_latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("/assets/open-sans-v17-latin-ext_latin-700.woff") format("woff"),
+    /* Modern Browsers */
+      url("/assets/open-sans-v17-latin-ext_latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/assets/open-sans-v17-latin-ext_latin-700.svg#OpenSans")
+      format("svg"); /* Legacy iOS */
+}
+
+html, body {
+  margin: 0;
+  overflow: hidden;
+}
+
+html,
+body,
+#root,
+.app-layout,
+.aside-left,
+.aside-right,
+.diagram {
+  height: 100%;
+  width: 100%;
+}
+
+.diagram {
+  overflow: auto;
+  background: #333;
+}
+
+.main-area {
+  height: 100%;
+  width: 100%;
+}
+
+html,
+body,
+div,
+p,
+span,
+a,
+td,
+ul,
+li {
+  font-family: "Open Sans", "Exo";
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 4px 0;
+  margin: 0;
+  font-family: "Open Sans", "Exo";
+  font-weight: 400;
+}
+
+h1 strong,
+h1 b,
+h2 strong,
+h2 b,
+h3 strong,
+h3 b,
+h4 strong,
+h4 b,
+h5 strong,
+h5 b,
+h6 strong,
+h6 b {
+  font-weight: 700;
+}
+
+p {
+  padding: 1px 0;
+  font-size: 12px;
+}
+
+.diagram {
+  position: relative;
+}
+
+.t {
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 4px 4px 8px -8px black;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  overflow: auto;
+  z-index: 1;
+  margin: 1px;
+  display: flex;
+  flex-direction: column;
+  min-height: 44px;
+  min-width: 150px;
+}
+
+.t-max-content {
+  min-width: max-content;
+}
+
+.t-fixed-min {
+  min-width: 150px;
+}
+
+
+.drgbl:after {
+  content: "";
+  display: inline-block;
+  opacity: 0;
+  height: 20px;
+  width: 1px;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}
+
+.im-n {
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  overflow: auto;
+  z-index: 1;
+  margin: 1px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 44px;
+  min-width: 150px;
+}
+
+.im-n img {
+  max-width: 100%;
+}
+
+.im-tp {
+  position: absolute;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 4px 4px 8px -8px black;
+  border: 1px dashed #666;
+  overflow: auto;
+  z-index: 1;
+  margin: 1px;
+  display: flex;
+  flex-direction: column;
+  background: #f9f9f9;
+}
+
+.t a,
+.im-n a,
+.im-tp a {
+  text-decoration: none;
+  color: black;
+}
+
+#mainHtmlCanvas {
+  transform-origin: 0 0;
+}
+
+.watermark {
+  opacity: 0.25;
+  width: 200px;
+  height: 200px;
+}
+
+.dGraphicsHeader {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 14px;
+  cursor: pointer;
+  background: #666;
+  flex-grow: 0;
+  flex-shrink: 0;
+  color: #fff;
+  height: 22px;
+  min-width: fit-content;
+  white-space: nowrap;
+}
+
+.dTableName {
+  padding: 3px 0 1px 3px;
+  user-select: none;
+  font-weight: 700;
+  text-shadow: 0 0 1px #000;
+}
+
+.dTableNameLight {
+  padding: 3px 0 1px 3px;
+  user-select: none;
+  font-weight: 700;
+}
+
+.dGraphicsLeftTop {
+  margin-right: auto;
+  padding: 2px 4px;
+}
+
+.dGraphicsRightTop {
+  margin-left: auto;
+  padding: 2px 4px;
+}
+
+.im-tp .dGraphicsHeader {
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  cursor: pointer;
+  background: #666;
+  flex-grow: 0;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.im-tp .dTableName {
+  padding: 1px 0 1px 0;
+  cursor: move;
+  user-select: none;
+  text-align: left;
+}
+
+.t a.gr {
+  background: #404040;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  user-select: none;
+  flex-grow: 1;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dCols,
+.im-n-text {
+  padding: 2px 4px;
+  font-size: 13px;
+  overflow: auto;
+  min-height: auto;
+  min-width: auto;
+  color: #fff;
+  background: #404040;
+  user-select: none;
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.im-n-text {
+  overflow: hidden;
+}
+
+.im-n-text-nowrap div,
+.im-n-text-nowrap p,
+.im-n-text-nowrap h1,
+.im-n-text-nowrap h2,
+.im-n-text-nowrap h3,
+.im-n-text-nowrap h4,
+.im-n-text-nowrap h5,
+.im-n-text-nowrap h6,
+.im-n-text-nowrap ul,
+.im-n-text-nowrap ol {
+  white-space: nowrap;
+}
+
+.dCols-desc pre {
+  white-space: pre-wrap;
+  padding: 5px;
+  font-size: 13px;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+  color: beige;
+}
+
+.dCols-desc-nowrap pre {
+  white-space: revert;
+}
+
+
+.im-n-text p {
+  margin: 0;
+}
+
+.im-n-text a {
+  color: #2196f3;
+}
+
+pre.im-n-text {
+  padding: 0;
+  margin: 0;
+  font-family: "Open sans";
+}
+
+.im-tp-text {
+  padding: 5px 4px 2px 4px;
+  font-size: 13px;
+  overflow: auto;
+  min-height: auto;
+  min-width: auto;
+  color: #555;
+  user-select: none;
+  flex-grow: 1;
+}
+
+.dRow {
+  display: grid;
+  grid-template-columns: 25px auto auto 24px;
+  border-radius: 2px;
+  min-height: 18px;
+}
+
+.dCol {
+  margin-right: 0;
+  font-size: 12px;
+  min-height: 17px;
+}
+
+.dCol:nth-of-type(2),
+.dCol:nth-of-type(3) {
+  white-space: nowrap;
+  margin-right: 0;
+  font-weight: 400;
+  margin-right: 0px;
+}
+
+.dCol:nth-of-type(3) {
+  font-style: italic;
+  color: #ddd;
+  padding-left: 4px;
+  padding-right: 10px;
+  text-align: right;
+  margin-left: 20px;
+}
+
+.dCol:last-of-type {
+  margin-right: auto;
+  padding-left: 5px;
+}
+
+
+.t:hover:not(.sel-item-diagram),
+.im-n:hover:not(.sel-item-diagram) {
+  transition: box-shadow 0.4s;
+}
+
+.sel-item-diagram,
+.sel-item-diagram-multi,
+.sel-item-diagram:hover {
+  box-shadow: 0 0 5px 1px #eee;
+  z-index: 100;
+  box-shadow: 0 0 8px -2px #666;
+  outline: 2px solid #2196f3;
+  outline-offset: 0px;
+  border: 1px solid #000;
+}
+
+.res {
+  display: none;
+}
+
+.sel-item-diagram-multi .res {
+  display: none;
+}
+
+.sel-item-diagram .res {
+  display: block;
+}
+
+marker path {
+  stroke-width: 1;
+}
+
+path {
+  fill: none;
+  stroke-width: 1;
+  cursor: pointer;
+}
+
+circle.relationCardinality {
+  fill: #585858;
+  stroke: #ddd;
+  stroke-width: 1;
+}
+
+#svgMain {
+  position: absolute;
+  background: linear-gradient(45deg, #f2f2f2, #ddd, #f2f2f2, #eee);
+  background: #585858;
+  border: 0;
+}
+
+.sel-relation-diagram {
+  stroke: #000;
+}
+
+.sel-relation-diagram-arrow {
+  fill: #000;
+}
+
+.relation-diagram-bg {
+  stroke: rgba(0, 0, 0, 0.01);
+  stroke-width: 5px;
+  z-index: 0;
+}
+
+.sel-relation-diagram-bg {
+  stroke: #3faaff;
+}
+
+text,
+tspan {
+  user-select: none;
+  cursor: pointer;
+}
+
+.rbelongs {
+  stroke-dasharray: 3;
+}
+
+.rboth {
+  stroke-dasharray: 10, 5, 2, 2, 2, 5;
+}
+
+
+.rCardinality {
+  font-size: 10px;
+  fill: #eee;
+  color: #eee; 
+}
+
+.rCardinalityBg {
+  font-size: 10px;
+  stroke-width: 4px;
+  fill: #333;
+  stroke:#333;
+}
+.im-t-c {
+  display: table-cell;
+}
+
+.im-t-c:not(:nth-of-type(1)):not(:nth-of-type(3)) {
+  padding-right: 4px;
+}
+
+.im-mini {
+  font-size: 11px;
+  padding-bottom: 1px;
+}
+
+
+.im-mini-PK {
+  background: #ff0000;
+  font-size: 10px;
+  padding: 0 2px;
+  border-radius: 2px;
+  margin-right: 5px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 2px;
+}
+
+.im-mini-PFK {
+  background: #2196f3;
+  font-size: 10px;
+  padding: 0 2px;
+  border-radius: 2px;
+  margin-right: 5px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 2px;
+}
+
+.im-mini-FK {
+  background: #4caf50;
+  font-size: 10px;
+  padding: 0 2px;
+  border-radius: 2px;
+  margin-right: 5px;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  top: 2px;
+}
+
+.im-embedded {
+  margin-left: 21px;
+  padding-left: 0px;
+  grid-column: span 4;
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 2px;
+}
+
+.im-col-list {
+  color: limegreen;
+  padding-right: 1px;
+  padding-left: 1px;
+  font-style: normal;
+}
+
+.im-col-object-left {
+  color: goldenrod;
+  padding-right: 1px;
+  font-style: normal;
+  display: inline-block;
+}
+
+.im-col-object-right {
+  color: goldenrod;
+  padding-left: 1px;
+  font-style: normal;
+  display: inline-block;
+}
+
+.im-select-decorator {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: 50px;
+  top: 50px;
+  border: 2px dotted #ccc;
+  z-index: 9999;
+}
+
+.im-other-object {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1px 4px;
+}
+
+.im-other-object-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  opacity: 0.6;
+  text-transform: uppercase;
+}
+
+.im-dropdown ul li.im-dropdown-icon-empty {
+  display: grid;
+  grid-template-columns: 21px 1fr;
+}
+
+
+
+.forcedLineColor {
+  stroke: white !important;
+}
+
+.im-icon-ResizeBottomRight16 {
+  display: none;
+}
+

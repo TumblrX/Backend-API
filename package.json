@@ -1,0 +1,65 @@
+{
+  "name": "tumblrx",
+  "version": "1.0.0",
+  "description": "rest api for tumblrX website",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon server",
+    "start:prod": "node server",
+    "gen:docs": "npm run gen:docsme & npm run gen:fdocshtml",
+    "gen:docsme": "jsdoc2md *.js */*.js controllers/*/*.js    > README.md",
+    "gen:fdocshtml": "jsdoc -c jsdoc.json ./",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TumblrX/Backend-API.git"
+  },
+  "keywords": [
+    "TumblrX",
+    "backend",
+    "tumblr",
+    "rest",
+    "api"
+  ],
+  "authors": [
+    "Andrew Boshra (https://github.com/AndrewBoshra)",
+    "Bishoy Atef (https://github.com/BishoyAtef)",
+    "Yousef ElMahdy (https://github.com/yousefelmahdy)",
+    "Peter Ayad (https://github.com/PeterAyad)"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TumblrX/Backend-API/issues"
+  },
+  "homepage": "https://github.com/TumblrX/Backend-API#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "clean-jsdoc-theme": "^3.2.10",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "google-auth-library": "^7.10.2",
+    "googleapis": "^91.0.0",
+    "joi": "^17.4.2",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.12",
+    "mongoose-autopopulate": "^0.16.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.3",
+    "nodemailer": "^6.7.1",
+    "pusher": "^5.0.0",
+    "redis": "^4.0.1",
+    "socket.io": "^4.4.0",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.1.6",
+    "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.2.0",
+    "eslint-config-google": "^0.14.0",
+    "jest": "^27.3.1",
+    "jsdoc-to-markdown": "^7.1.0",
+    "nodemon": "^2.0.14"
+  }
+}

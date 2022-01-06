@@ -1,0 +1,15 @@
+{
+    "recurseDepth": 10,
+    "source": {
+        "excludePattern": "(node_modules|views)/*"
+    },
+    "opts": {
+        "destination": "views/fdocs/",
+        "recurse": true,
+        "verbose": true,
+        "template": "./node_modules/clean-jsdoc-theme",
+        "theme_opts": {
+            "theme": "dark"
+        }
+    }
+}

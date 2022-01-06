@@ -1,0 +1,25 @@
+{
+    "env": {
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": [
+        "google"
+    ],
+    "parserOptions": {
+        "ecmaVersion": 13
+    },
+    "rules": {
+        "linebreak-style": "off",
+        "indent": [
+            "warn",
+            4
+        ],
+        "max-len":[
+            "warn",
+            120
+        ],
+        "new-cap":"off"
+    }
+}
