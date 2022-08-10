@@ -12,12 +12,7 @@ const blogRouter = require('./controllers/routers/blogRoutes/blog');
 const notificationRouter = require('./controllers/routers/notificationRoutes/notificationRouter');
 
 const app = express();
-app.use(
-    cors({
-        origin: '*',
-        optionsSuccessStatus: 200, // For legacy browser support
-    }),
-);
+app.use(cors());
 // JSON Parser
 app.use(express.json());
 // URL Parser
