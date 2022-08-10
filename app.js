@@ -14,7 +14,7 @@ const notificationRouter = require('./controllers/routers/notificationRoutes/not
 const app = express();
 app.use(
     cors({
-        origin: 'https://tumblrx-app.herokuapp.com/',
+        origin: '*',
         optionsSuccessStatus: 200, // For legacy browser support
     }),
 );
