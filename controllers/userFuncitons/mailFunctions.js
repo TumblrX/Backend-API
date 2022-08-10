@@ -141,7 +141,7 @@ const sendNewPasswordEmail = async function(email, password) {
 };
 
 module.exports = {
-    sendForgotPasswordEmail,
-    sendVerificationEmail,
-    sendNewPasswordEmail,
+    sendForgotPasswordEmail: () => {},
+    sendVerificationEmail: () => {},
+    sendNewPasswordEmail: () => {},
 };
