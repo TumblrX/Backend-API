@@ -12,7 +12,12 @@ const blogRouter = require('./controllers/routers/blogRoutes/blog');
 const notificationRouter = require('./controllers/routers/notificationRoutes/notificationRouter');
 
 const app = express();
-app.use(cors());
+app.use(
+    cors({
+        origin: 'https://tumblrx-app.herokuapp.com/',
+        optionsSuccessStatus: 200, // For legacy browser support
+    }),
+);
 // JSON Parser
 app.use(express.json());
 // URL Parser

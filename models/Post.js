@@ -4,7 +4,7 @@ const removeDuplicates = require('../controllers/utils/removeDuplicates');
 const Schema = mongoose.Schema;
 const Blog = require('./Blogs').BlogModel;
 const {isColor} = require('../controllers/validation');
-const SERVER_URL = 'http://tumblrx.me:3000/';
+const SERVER_URL = process.env.SERVER_URL;
 
 const blogAttributionSchema = {
     type: Schema.Types.ObjectId,
